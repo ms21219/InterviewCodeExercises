@@ -63,4 +63,17 @@ public class ExerciseController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	@PostMapping("/deleteAllNaceDetails")
+	public ResponseEntity<String> deleteAllNaceDetails() {
+		String message = "";
+		try {
+			es.deleteAllNaceDetails();
+			message = "All Record Removed";
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Issue while Removing The Records";
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 }

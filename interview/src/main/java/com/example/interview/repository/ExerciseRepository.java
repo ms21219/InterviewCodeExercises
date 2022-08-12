@@ -12,4 +12,5 @@ public interface ExerciseRepository extends CrudRepository<ExerciseModel, Intege
 
 	@Query(value = "SELECT * from exercisedb.nace ed where ed.orders = ?1", nativeQuery = true)
 	public List<ExerciseModel> getData(int orders);
+	
 }

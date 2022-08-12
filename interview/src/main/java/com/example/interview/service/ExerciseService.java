@@ -11,7 +11,6 @@ import com.example.interview.repository.ExerciseRepository;
 import au.com.bytecode.opencsv.CSVParser;
 import au.com.bytecode.opencsv.CSVReader;
 
-
 @Service
 public class ExerciseService {
 
@@ -65,5 +64,9 @@ public class ExerciseService {
 
 	public List<ExerciseModel> getAllNaceDetails() {
 		return (List<ExerciseModel>) repo.findAll();
+	}
+
+	public void deleteAllNaceDetails() {
+		repo.deleteAll();
 	}
 }
