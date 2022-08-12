@@ -39,13 +39,13 @@ public class ExerciseController {
 	@GetMapping("/getNaceDetails/{orders}")
 	public ResponseEntity<List<ExerciseModel>> getNaceDetails(@PathVariable int orders) {
 		try {
-			List<ExerciseModel> tutorials = es.getNaceDetails(orders);
+			List<ExerciseModel> data = es.getNaceDetails(orders);
 
-			if (tutorials.isEmpty()) {
+			if (data.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
 
-			return new ResponseEntity<>(tutorials, HttpStatus.OK);
+			return new ResponseEntity<>(data, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -53,12 +53,12 @@ public class ExerciseController {
 	@GetMapping("/getallNaceDetails")
 	public ResponseEntity<List<ExerciseModel>> getallNaceDetails() {
 		try {
-			List<ExerciseModel> tutorials = es.getAllNaceDetails();
+			List<ExerciseModel> data = es.getAllNaceDetails();
 
-			if (tutorials.isEmpty()) {
+			if (data.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
-			return new ResponseEntity<>(tutorials, HttpStatus.OK);
+			return new ResponseEntity<>(data, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
